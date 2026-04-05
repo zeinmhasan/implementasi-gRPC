@@ -1,4 +1,4 @@
-# Live Concert & Event Management System (gRPC Simpel)
+# Live Concert & Event Management System
 
 Project ini adalah simulasi sistem konser real-time berbasis gRPC dengan 3 service inti:
 
