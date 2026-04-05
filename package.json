@@ -1,0 +1,27 @@
+{
+  "name": "live-concert-grpc",
+  "version": "1.0.0",
+  "main": "dist/server/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon",
+    "start": "node dist/server/index.js",
+    "client:interactive": "ts-node src/client/interactive.client.ts",
+    "client:penonton": "ts-node src/client/penonton.client.ts",
+    "client:panitia": "ts-node src/client/panitia.client.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.14.3",
+    "@grpc/proto-loader": "^0.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "nodemon": "^3.1.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.2"
+  }
+}

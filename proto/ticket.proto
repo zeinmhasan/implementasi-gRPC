@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package liveconcert.ticket;
+
+service TicketService {
+  rpc BuyTicket(BuyTicketRequest) returns (BuyTicketResponse);
+  rpc CheckAvailability(CheckAvailabilityRequest) returns (CheckAvailabilityResponse);
+}
+
+message BuyTicketRequest {
+  string user_id = 1;
+  string seat_number = 2;
+}
+
+message BuyTicketResponse {
+  bool success = 1;
+  string message = 2;
+  string ticket_id = 3;
+  string seat_number = 4;
+  string user_id = 5;
+}
+
+message CheckAvailabilityRequest {}
+
+message CheckAvailabilityResponse {
+  int32 total_seats = 1;
+  int32 sold_seats = 2;
+  int32 available_seats = 3;
+}

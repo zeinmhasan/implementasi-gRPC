@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package liveconcert.announcement;
+
+service AnnouncementService {
+  rpc PushAnnouncement(PushAnnouncementRequest) returns (PushAnnouncementResponse);
+  rpc StreamAnnouncements(StreamAnnouncementsRequest) returns (stream AnnouncementUpdate);
+}
+
+message PushAnnouncementRequest {
+  string announcer_id = 1;
+  string announcer_role = 2;
+  string title = 3;
+  string message = 4;
+}
+
+message PushAnnouncementResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message StreamAnnouncementsRequest {
+  string user_id = 1;
+}
+
+message AnnouncementUpdate {
+  string title = 1;
+  string message = 2;
+  string published_by = 3;
+  int64 published_at_unix = 4;
+}
